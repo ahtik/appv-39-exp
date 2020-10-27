@@ -1,0 +1,32 @@
+version : 2.x.{build}
+
+clone_folder: C:\Project
+
+environment:
+
+    matrix:
+      - {PY_VER: "39", PY_ARCH: "32"}
+      - {PY_VER: "39", PY_ARCH: "64"}
+      - {PY_VER: "38", PY_ARCH: "32"}
+      - {PY_VER: "38", PY_ARCH: "64"}
+      - {PY_VER: "37", PY_ARCH: "32"}
+      - {PY_VER: "37", PY_ARCH: "64"}
+      - {PY_VER: "27", PY_ARCH: "32"}
+      - {PY_VER: "27", PY_ARCH: "64"}
+
+    # The python used in the build process, not the one packages are built for
+    PYEXE: C:\Python39-x64\python.exe
+
+matrix:
+    fast_finish: false
+
+cache:
+  - C:\Others -> scripts\appveyor.cache_rebuild
+
+build: off
+
+build_script:
+    - "%PYEXE% scripts\\appveyor.py build_script"
+
+
+# vim: set ts=4 sts=4 sw=4:
