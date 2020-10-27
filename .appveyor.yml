@@ -20,13 +20,10 @@ environment:
 matrix:
     fast_finish: false
 
-cache:
-  - C:\Others -> scripts\appveyor.cache_rebuild
-
 build: off
 
 build_script:
-    - "%PYEXE% scripts\\appveyor.py build_script"
+    - "%PYEXE% -VV"
 
 
 # vim: set ts=4 sts=4 sw=4:
