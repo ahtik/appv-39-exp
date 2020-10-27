@@ -2,6 +2,8 @@ version : 2.x.{build}
 
 clone_folder: C:\Project
 
+image: Visual Studio 2019
+
 environment:
 
     matrix:
@@ -23,8 +25,7 @@ matrix:
 build: off
 
 build_script:
-  - "%PYEXE% appveyor.py python_info"
-#    - "%PYEXE% -VV"
+  - "%PYEXE% -VV"
 
 
 # vim: set ts=4 sts=4 sw=4:
