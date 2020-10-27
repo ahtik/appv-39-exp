@@ -23,7 +23,8 @@ matrix:
 build: off
 
 build_script:
-    - "%PYEXE% -VV"
+  - "%PYEXE% appveyor.py python_info"
+#    - "%PYEXE% -VV"
 
 
 # vim: set ts=4 sts=4 sw=4:
